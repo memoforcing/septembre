@@ -1,0 +1,41 @@
+table {
+    width: 400px;
+}
+th{
+    text-align: left;
+}
+table, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #fff;
+}
+
+tr:nth-child(odd) {
+    background-color: #ddd;
+}
+
+.general{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.tableCentered1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.tableCentered2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -80px; /** pas ce que je voulais **/
+}
+
