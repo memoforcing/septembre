@@ -18,6 +18,14 @@ tr:nth-child(odd) {
     background-color: #ddd;
 }
 
+.admiral{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin-left: 260px;
+    margin-top: 20px;
+}
+
 .general{
     display: flex;
     justify-content: center;
