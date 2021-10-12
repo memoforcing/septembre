@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memo01</title>
+</head>
+<body onload="setFocusPerguntaTxt()">
+    <div class="upContainer">        
+
+            <div class="topArea">
+                <div class="titulo">
+                   <img src="img/repeat2.png"> 
+                <!--   <h1>Memo-Forcing</h1> -->
+                </div>    
+            </div>
+
+
+            <div class="menu-section">
+                <nav class="single-nav menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Inglês</a></li>
+                        <li><a href="#">Personalizado</a></li>
+                        <li><a href="#">Textos</a></li>
+                        <li><a href="#">Sobre nós</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            
+                <div class="maincontainer">
+                    <div class="maininicio">
+                        <div class="perguntaRespostaTxb">
+                            <textarea id="perguntaTextArea" name="perguntaTextArea" rows="4" cols="50" placeholder="Pergunta"></textarea>
+                        </div> 
+                            <button class="button" type="button" onclick="respostaSetFocus()">Resposta</button>
+                    </div>     
+                    <div class="maininicio">
+                        <div class="perguntaRespostaTxb">
+                            <textarea id="respostaTextArea" name="respostaTextArea" rows="4" cols="50" placeholder="Resposta"></textarea>
+                        
+                        </div> 
+                            <button class="button" type="button" id="btnSalvar" onclick="inserindoNoArray()">Salvar</button>
+                            <button class="button" type="button" id="btnRevisar" onclick="acabarERevisar()">Revisar</button>
+                            <button class="button" type="button" id="btnTest" onclick="test()">Test</button>
+                            <br>
+                            <button class="button" type="button" id="btnConferir" onclick="testando()">Conferir</button>
+                            <button class="button" type="button" id="btnVerdict" onclick="verdict()">Verdict</button>
+                            <button class="button" type="button" id="btnStudyMistakes" onclick="studymistakes()">Revisar E</button>
+                            <br>
+                            
+                        </div> 
+                    </div>                            
+    </dic>
+
+    <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&Texto para estudar&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+
+    <div class="upContainer">        
+
+            <div class="maincontainer">
+                <div class="maininicio">
+                    <div class="perguntaRespostaTxb">
+                        <h2 id="questUnderline">Pergunta</h2>
+                        <h3 id="questtxt"></h3>
+                    </div>                        
+                </div>                
+            </div>    
+    </div>    
+
+
+    <div class="upContainer">        
+
+        <div class="maincontainer">
+            <div class="maininicio">
+                <div class="perguntaRespostaTxb">
+                    <h2 id="respostaUnderline">Resposta</h2>
+                    <h3 id="respttxt"></h3>
+                </div> 
+            </div>        
+        </div>
+    </div>    
+    <p id="demo">demo</p>
+    <p id="demoB">demoB</p>
+<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& botaa que inicia o test &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+
+
+</body>
+<script src="scriptIndex.js"></script>
+</html>
