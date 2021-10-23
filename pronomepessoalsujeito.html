@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memo01</title>
+</head>
+<body>
+    <div class="upContainer">        
+
+            <div class="topArea">
+                <div class="titulo">
+                   <img src="img/repeat2.png"> 
+                <!--   <h1>Memo-Forcing</h1> -->
+                </div>    
+            </div>
+
+
+            <div class="menu-section">
+                <nav class="single-nav menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Inglês</a></li>
+                        <li><a href="#">Personalizado</a></li>
+                        <li><a href="#">Textos</a></li>
+                        <li><a href="#">Sobre nós</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <div class="main">
+                <div class="maincontainer">
+                    <div class="maininicio">
+                        <div class="infos">                           
+                            <h2>Informações</h2>
+                        </div>                     
+                        <table class="styled-table" name="tabelaa" id="tabelaa">
+                            <thead>
+                                <tr>
+                                    <th>Perguntas</th>
+                                    <th>Respostas</th>
+                                </tr>
+                            </thead>
+                            <tbody name="tabelaabody" id="tabelaabody">
+                               <tr>
+                                   <td>eu</td>
+                                   <td>I</td>
+                               </tr>
+                               <tr>
+                                    <td>você</td>
+                                    <td>you</td>
+                                </tr>
+                                <tr>
+                                    <td>ele</td>
+                                    <td>he</td>
+                                </tr>
+                                <tr>
+                                    <td>ela</td>
+                                    <td>she</td>
+                                </tr>
+                                <tr>
+                                     <td>isto</td>
+                                     <td>it</td>
+                                 </tr>
+                                 <tr>
+                                     <td>nós</td>
+                                     <td>we</td>
+                                 </tr>
+                                 <tr>
+                                    <td>vocês</td>
+                                    <td>you</td>
+                                </tr>
+                                <tr>
+                                    <td>eles</td>
+                                    <td>they</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btnTblPersonalizada">
+                            <button type="button" onclick="transferirListaCompleta()">Lista completa</button>
+                            <button type="button" onclick="deletarTabelaPrincipal()">Deletar Tabela Inicial</button>
+                        </div>    
+                    </div>
+                    <div class="maininicio">              
+                        <div class="perguntaRespostaTxb">
+                            <input type="text" placeholder="Pergunta" name="inputa" id="inputa" onkeypress="setFocusResposta()">
+                            <input type="text" placeholder="Resposta" name="inputb" id="inputb" onkeypress="btnAddRow()"> 
+                        </div>     
+                        
+                         
+                            <table class="styled-table" name="tabelab" id="tabelab">
+                                <thead>
+                                    <tr>
+                                        <th>Pergunta</th>
+                                        <th>Resposta</th>
+                                    </tr>
+                                </thead>
+                                <tbody name="tabelabbody" id="tabelabbody">
+                                   
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </dic>
+    <script src="pronomepessoalsujeito.js"></script>
+</body>
+</html>

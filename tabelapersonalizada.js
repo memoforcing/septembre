@@ -55,35 +55,32 @@ var getarrayBis2 = [];
 
 var contagemDeRodadas = 0;
 
-var noRandom = false;
+var decidirSeIniciarTestNoRandom = false;
 
 function iniciarTest(){
-
-
-
-
-
-    var table = document.getElementById('tabelaa');
     
-    for (var i = 1; i < table.rows.length; i++)
-        {      
-            getarray1.push(table.rows[i].cells[0].innerHTML);
-            getarray2.push(table.rows[i].cells[1].innerHTML);                       
-        }  
-    if (contagemDeRodadas === 0){
+
+        var table = document.getElementById('tabelaa');
+        
         for (var i = 1; i < table.rows.length; i++)
-        {      
-            getarrayBis1.push(table.rows[i].cells[0].innerHTML);
-            getarrayBis2.push(table.rows[i].cells[1].innerHTML);                       
-        }  
+            {      
+                getarray1.push(table.rows[i].cells[0].innerHTML);
+                getarray2.push(table.rows[i].cells[1].innerHTML);                       
+            }  
+        if (contagemDeRodadas === 0){
+            for (var i = 1; i < table.rows.length; i++)
+            {      
+                getarrayBis1.push(table.rows[i].cells[0].innerHTML);
+                getarrayBis2.push(table.rows[i].cells[1].innerHTML);                       
+            }  
+        
+        }    
+        console.log("getarray xx1 = " + getarray1);
+        console.log("getarray xx2 = " + getarray2);
 
-    }    
-    console.log("getarray xx1 = " + getarray1);
-    console.log("getarray xx2 = " + getarray2);
+        faseTest = true;
 
-    faseTest = true;
-
-    arrayToInput();
+        arrayToInput();    
 
 }
 
@@ -175,13 +172,29 @@ function conferirErros(){
     getarray22 = [];
     console.log("getarray11 = " + getarray11);
     contagemDeRodadas = contagemDeRodadas + 1;
+    
 }
 
 function recomecarDoZero(){
-var getarray1 = [];
-var getarray2 = [];
-var getarray11 = []; 
-var getarray22 = []; 
+
+    //--------------------------------------------------------------------------
+
+    var  tamanhoTabela = tabelaa.rows.length;
+    console.log("tamanhoTabela = " + tamanhoTabela);
+    while (tamanhoTabela > 1) 
+            {
+                document.getElementById("tabelaa").deleteRow(1);
+                tamanhoTabela = tamanhoTabela - 1; 
+            }
+
+
+    //--------------------------------------------------------------------------
+
+    getarray1 = [];
+    getarray2 = [];
+    getarray11 = []; 
+    getarray22 = []; 
+
     console.log("recomecarDoZero() getarray1 =  " + getarray1);
     console.log("recomecarDoZero() getarray11 =  " + getarray11);
     console.log("recomecarDoZero() getarray1 =  " + getarray2);
@@ -235,62 +248,156 @@ var shaped = 0;
 
 var difTabArray;
 
+/*-------------------------------------------------------------------------------*/
 
 
 
 
-function iniciarTestNoRandom(){
+/*--------------------------------------------------------------------------------*/
 
 
-    var table = document.getElementById('tabelaa');
-    
-    for (var i = 1; i < table.rows.length; i++)
+
+
+
+    function iniciarTestNoRandom(){
+        var table = document.getElementById('tabelaa');
+
+        getarray1 = [];
+        getarray2 = [];
+
+        for (var i = 1; i < table.rows.length; i++)
         {      
             getarray1.push(table.rows[i].cells[0].innerHTML);
             getarray2.push(table.rows[i].cells[1].innerHTML);                       
         }  
-    for (g = 0; g < (getarray1.length*15); g++) {
-        var chooseRow =  Math.floor(Math.random() * (getarray1.length));
-                arrayrandom1.push(getarray1[chooseRow]); // new
-                arrayrandom2.push(getarray2[chooseRow]);
-    }    
+        console.log("getarray xx1 = " + getarray1);
+        console.log("getarray xx2 = " + getarray2);
 
-    console.log(arrayrandom1);
-    console.log(arrayrandom2);
+        if (contagemDeRodadas === 0){
+            for (var i = 1; i < table.rows.length; i++)
+            {      
+                getarrayBis1.push(table.rows[i].cells[0].innerHTML);
+                getarrayBis2.push(table.rows[i].cells[1].innerHTML);                       
+            }  
+        
+        }            
+        
+        for (g = 0; g < (getarray1.length*15); g++) {
+            var chooseRow =  Math.floor(Math.random() * (getarray1.length));
+                    arrayrandom1.push(getarray1[chooseRow]); // new
+                    arrayrandom2.push(getarray2[chooseRow]);
+        }    
 
-   
-   
-   for (f = 0; f < arrayrandom1.length; f++)
+        console.log(arrayrandom1);
+        console.log(arrayrandom2);
+
+        getarray1 = [];
+        getarray2 = [];
+    
+    for (f = 0; f < arrayrandom1.length; f++)
+                {
+                    var equalsto = false;
+                    areadeTransferencia1 = arrayrandom1[f];
+                    areadeTransferencia2 = arrayrandom2[f];
+                    
+                    console.log("cleanarray.length = " + cleanarray1.length); // ajouté
+                    
+                    for (e = 0; e < cleanarray1.length; e++)
+                        {
+                            if (areadeTransferencia1 == cleanarray1[e])
+                                {
+                                    equalsto = true;
+                                    { break;}                        
+                                }
+                        }
+                            if (equalsto == false) 
+                                {
+                                    cleanarray1.push(areadeTransferencia1);
+                                    cleanarray2.push(areadeTransferencia2);
+
+                                    getarray1.push(areadeTransferencia1);
+                                    getarray2.push(areadeTransferencia2);
+                                    
+                                    arrayLimpo1 = arrayLimpo1 + cleanarray1[e];                              
+                                    arraylimpo2 = arraylimpo2 + cleanarray2[e];   
+                                    
+                                    console.log("cleanarray 2110 = " + cleanarray1); 
+                                    console.log("getarray1 2110 = " + getarray1);                             
+                                }
+                } 
+
+                faseTest = true;
+                arrayrandom1 = [];
+                arrayrandom2 = [];
+                cleanarray1 = [];
+                cleanarray2 = [];
+                
+                
+                arrayToInput();  
+                
+    }
+
+    var getAux1 = [];
+    var getAux2 = [];
+    
+    function inverterColunas(){            
+    var table = document.getElementById('tabelaa');
+        
+    for (var i = 1; i < table.rows.length; i++)
+        {      
+            getAux1.push(table.rows[i].cells[0].innerHTML);
+            getAux2.push(table.rows[i].cells[1].innerHTML);                       
+        }  
+        console.log("inverterColunas() = " + getAux1);
+        console.log("inverterColunas() = " + getAux2); 
+
+        //---------------------------------------------------- deletando tabela antiga
+
+        var  tamanhoTabela = tabelaa.rows.length;
+    console.log("tamanhoTabela = " + tamanhoTabela);
+    while (tamanhoTabela > 1) 
             {
-                var equalsto = false;
-                areadeTransferencia1 = arrayrandom1[f];
-                areadeTransferencia2 = arrayrandom2[f];
-                
-                console.log("cleanarray.length = " + cleanarray1.length); // ajouté
-                
-                for (e = 0; e < cleanarray1.length; e++)
-                    {
-                        if (areadeTransferencia1 == cleanarray1[e])
-                            {
-                                equalsto = true;
-                                { break;}                        
-                            }
-                    }
-                        if (equalsto == false) 
-                            {
-                                cleanarray1.push(areadeTransferencia1);
-                                cleanarray2.push(areadeTransferencia2);
-                                
-                                arrayLimpo1 = arrayLimpo1 + cleanarray1[e];                              
-                                arraylimpo2 = arraylimpo2 + cleanarray2[e];   
-                                
-                                console.log("cleanarray = " + cleanarray1);                              
-                            }
-            } 
+                document.getElementById("tabelaa").deleteRow(1);
+                tamanhoTabela = tamanhoTabela - 1; 
+            }
 
-            noRandom = true; // senão ele vai fazer um test ordenado
-            
-            
-}
+        //----------------------------------------------------
+        
+        
+    var tabelaabody = document.getElementsByName('tabelaabody')[0];
+
+    console.log("getAux2.length = " + getAux2.length);
+
+
+
+    for(i = 0; i < getAux2.length; i++){        
+
+        var portV = getAux2[i];
+        var englV = getAux1[i];
+        console.log("portV = " + portV);
+        console.log("englV = " + englV); 
+
+        var newRow = tabelaabody.insertRow(i);
+
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+    
+        cell1.innerHTML = portV;
+        cell2.innerHTML = englV;
+
+    }     
+    }  
+
+
+
+
+        
+
+
+
+        
+
+
+
 
            
